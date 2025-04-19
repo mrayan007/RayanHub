@@ -32,6 +32,11 @@ button, .clickable {
     place-items: center;
     display: grid;
     /* box-shadow: 0px 0px 20px #000000; */
+    position: absolute;
+}
+
+#outsideBorder.grabbing {
+    cursor: url("grab.png"), grabbing;
 }
 
 .insideBorder {
@@ -143,7 +148,7 @@ h2 {
     }
 }
 
-h2:hover, footer span:hover {
+h2:hover, #footerWatermark:hover {
     color: transparent;
     background-image: linear-gradient(to bottom, 
       red, orange, yellow, green, blue, indigo, violet, red);
@@ -167,12 +172,15 @@ h2:hover, footer span:hover {
 footer {
     background-color: #c3c3c3;
     width: 100%;
-    place-items: center;
-    display: grid;
+    /* place-items: center;
+    display: grid; */
     height: 50px;
     border: solid 3px white;
     border-style: outset;
-    display: flex;
+    align-content: center;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    text-align: center;
 }
 
 .menuButtonBorder {
@@ -181,7 +189,8 @@ footer {
     margin-top: -25px;
     border: solid 3px #818181;
     border-style: outset;
-    /* margin-left: px; */
+    float: left;
+    margin-top: -12px;
 }
 
 .menuButtonBorder:hover {
@@ -202,7 +211,22 @@ button:hover {
     border-style: inset;
 }
 
-footer span {
-    margin-left: 87%;
+#footerText {
+    color: transparent;
+    background-image: linear-gradient(to bottom, 
+      red, orange, yellow, green, blue, indigo, violet, red);
+    background-size: 100% 300%;
+    background-position: top;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: rainbowShift 2s linear infinite;
+    /* font-size: large; */
+    font-weight: bold;
+}
+
+#footerWatermark {
+    float: right;
     transition: all 0.3s ease-in-out;
+    margin-right: 5px;
 }
