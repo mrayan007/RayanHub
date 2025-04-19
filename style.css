@@ -5,6 +5,7 @@
 
 body, html {
     height: 100%;
+    width: 100%;
     margin: 0;
     background-color: #008080;
     font-family: "myFont";
@@ -13,7 +14,7 @@ body, html {
     cursor: url("cursor.png"), auto;
 }
 
-button {
+button, .clickable {
     cursor: url("pointer.png"), pointer;
 }
 
@@ -77,10 +78,82 @@ button {
     height: 315px;
     border: solid 3px #818181; 
     border-style: inset;
-    place-items: center;
-    display: grid;
     background-color: #fdffff;
 }
+
+.secondInsideBorder img:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+#books {
+    width: 100px;
+    height: 100px;
+}
+
+#controller {
+    width: 100px;
+    height: 100px;
+}
+
+#computer {
+    width: 100px;
+    height: 100px;
+}
+
+#paper {
+    width: 100px;
+    height: 100px;
+}
+
+.school {
+    place-items: center;
+    margin-right: 200px;
+    margin-top: 30px;
+}
+
+.projects {
+    place-items: center;
+    margin-right: 200px;
+}
+
+.games {
+    place-items: center;
+    margin-left: 200px;
+    margin-top: -137px;
+}
+
+.about {
+    place-items: center;
+    margin-left: 200px;
+    margin-top: -137px;
+}
+
+h2 {
+    margin-top: -10px;
+    transition: all 0.3s ease-in-out;
+}
+
+@keyframes rainbowShift {
+    0% {
+      background-position: top;
+    }
+    100% {
+      background-position: bottom;
+    }
+}
+
+h2:hover, footer span:hover {
+    color: transparent;
+    background-image: linear-gradient(to bottom, 
+      red, orange, yellow, green, blue, indigo, violet, red);
+    background-size: 100% 300%;
+    background-position: top;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: rainbowShift 2s linear infinite;
+  }
 
 .footerOutsideBorder {
     width: 100%;
@@ -108,7 +181,11 @@ footer {
     margin-top: -25px;
     border: solid 3px #818181;
     border-style: outset;
-    margin-left: 510px;
+    /* margin-left: px; */
+}
+
+.menuButtonBorder:hover {
+    border-style: inset;
 }
 
 footer button {
@@ -121,6 +198,11 @@ footer button {
     font-size: large;
 }
 
+button:hover {
+    border-style: inset;
+}
+
 footer span {
-    margin-left: 830px;
+    margin-left: 87%;
+    transition: all 0.3s ease-in-out;
 }
