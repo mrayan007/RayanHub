@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'myFont';
-    src: url("../Fonts/W95FA.otf");
+    src: url("W95FA.otf");
 }
 
 body, html {
@@ -10,11 +10,11 @@ body, html {
     font-family: "myFont";
     letter-spacing: 1px;
     overflow: hidden;
-    cursor: url("../Art/Cursor/cursor.png"), auto;
+    cursor: url("cursor.png"), auto;
 }
 
 button {
-    cursor: url("../Art/Cursor/pointer.png"), pointer;
+    cursor: url("pointer.png"), pointer;
 }
 
 .mainContainer{
