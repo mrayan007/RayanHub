@@ -6,6 +6,24 @@
     </head>
     <body>
         <div class="mainContainer">
+            <div class="desktop">
+                <div class="school">
+                    <img src="books.png" alt="books" id="books" class="clickable">
+                    <h2>School</h2>
+                </div>
+                <div class="gamesDesktop">
+                    <img src="controller.png" alt="controller" id="controller" class="clickable">
+                    <h2>Games</h2>
+                </div>
+                <div class="projectsDesktop">
+                    <img src="computer.png" alt="computer" id="computer" class="clickable">
+                    <h2>Projects</h2>
+                </div>
+                <div class="aboutDesktop">
+                    <a href="about.html" target="iframe" onclick="openWindow()"><img src="paper.png" alt="paper" id="paper" class="clickable"></a>
+                    <h2>About</h2>
+                </div>
+            </div>
             <div class="outsideBorder" id="outsideBorder">
                 <div class="insideBorder">
                     <div class="header">
@@ -21,11 +39,11 @@
             <div class="footerOutsideBorder">
                 <footer>
                     <div class="menuButtonBorder">
-                        <button type="button" onclick="openWindow()">Menu</button>
+                        <button type="button">Menu</button>
                     </div>
                     <input type="text" id="searchBar" placeholder="Search...">
                     <span id="footerText">Site still under construction!</span>
-                    <span id="footerWatermark">Rayan Magouri <br> <span id="dateTime"></span></span>
+                    <span id="footerWatermark"><span id="dateTime"></span></span>
                 </footer>
             </div>
         </div>

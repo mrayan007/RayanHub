@@ -1,5 +1,6 @@
 const iframe = document.getElementById('iframe');
-const headerText = document.getElementById('headerText');
+let headerText = document.getElementById('headerText');
+
 
 // Function to update the date and time every second
 function updateDateTime() {
@@ -50,9 +51,10 @@ function closeWindow() {
 }
 
 function openWindow() {
-    outsideBorder.style.display = "block"; // Make it visible again
-    // Allow display to apply before transforming
-    setTimeout(() => {
-      outsideBorder.style.transform = "scale(1)";
-    }, 10); // A tiny delay ensures the transform happens
+    if (outsideBorder.style.display === "none") {
+        outsideBorder.style.display = "block";
+        setTimeout(() => {
+            outsideBorder.style.transform = "scale(1)";
+        }, 10); // Allow display to take effect before scaling
+    }
   }
