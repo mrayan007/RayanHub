@@ -1,12 +1,10 @@
 const iframe = document.getElementById('iframe');
-let headerText = document.getElementById('headerText');
-
+// const headerText = document.getElementById('headerText');
 
 // Function to update the date and time every second
 function updateDateTime() {
     document.getElementById('dateTime').innerHTML = new Date().toLocaleString();
 }
-
 // Run the updateDateTime function every second (1000 ms)
 setInterval(updateDateTime, 1000);
 
@@ -57,4 +55,9 @@ function openWindow() {
             outsideBorder.style.transform = "scale(1)";
         }, 10); // Allow display to take effect before scaling
     }
-  }
+}
+
+document.getElementById("changeHeader").addEventListener("click", function() {
+    // Access and modify the headerText span in the parent
+    window.parent.document.getElementById("headerText").textContent = "Portfolio";
+});
