@@ -10,35 +10,20 @@
                 <div class="insideBorder">
                     <div class="header">
                         <img src="globe.png" alt="globe" id="globe">
-                        My Portfolio
+                        <span id="headerText">Welcome!</span>
+                        <button type="button" id="closeButton" onclick="closeWindow()">✖</button>
                     </div>
                     <div class="secondOutsideBorder">
-                        <div class="secondInsideBorder">
-                            <div class="school" >
-                                <img src="books.png" alt="books" id="books" class="clickable">
-                                <h2>School</h2>
-                            </div>
-                            <div class="games" id="clickable" id="clickable">
-                                <img src="controller.png" alt="controller" id="controller" class="clickable">
-                                <h2>Games</h2>
-                            </div>
-                            <div class="projects" id="clickable">
-                                <img src="computer.png" alt="computer" id="computer" class="clickable">
-                                <h2>Projects</h2>
-                            </div>
-                            <div class="about" id="clickable">
-                                <img src="paper.png" alt="paper" id="paper" class="clickable">
-                                <h2>About</h2>
-                            </div>
-                        </div>
+                        <iframe src="about.html" id="iframe" name="iframe"></iframe>
                     </div>
                 </div>
             </div>
             <div class="footerOutsideBorder">
                 <footer>
                     <div class="menuButtonBorder">
-                        <button type="button">Menu</button>
+                        <button type="button" onclick="openWindow()">Menu</button>
                     </div>
+                    <input type="text" id="searchBar" placeholder="Search...">
                     <span id="footerText">Site still under construction!</span>
                     <span id="footerWatermark">Rayan Magouri <br> <span id="dateTime"></span></span>
                 </footer>

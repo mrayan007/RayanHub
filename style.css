@@ -33,6 +33,10 @@ button, .clickable {
     display: grid;
     /* box-shadow: 0px 0px 20px #000000; */
     position: absolute;
+    /* Smooth transform animation */
+    transition: transform 0.2s ease;
+    transform: scale(1); /* Start at full size */
+    transform-origin: center; /* Optional: where the scaling shrinks from */
 }
 
 #outsideBorder.grabbing {
@@ -69,6 +73,34 @@ button, .clickable {
     height: 40px;
 }
 
+#closeButton {
+    border: solid 3px white;
+    border-style: outset; 
+    font-family: "MyFont";
+    /* height: 25px;
+    width: 27px; */
+    font-size: large;
+    margin-left: auto;
+    margin-right: 3px;
+    scale: 0.8;
+}
+
+#closeButton:hover {
+    border-style: inset;
+}
+
+h1 {
+    color: transparent;
+    background-image: linear-gradient(to bottom, 
+      red, orange, yellow, green, blue, indigo, violet, red);
+    background-size: 100% 300%;
+    background-position: top;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: rainbowShift 2s linear infinite; 
+}
+
 .secondOutsideBorder {
     width: 462px;
     height: 320px;
@@ -76,6 +108,11 @@ button, .clickable {
     border-style: inset;
     place-items: center;
     display: grid;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
 }
 
 .secondInsideBorder {
@@ -193,8 +230,19 @@ footer {
     margin-top: -12px;
 }
 
-.menuButtonBorder:hover {
-    border-style: inset;
+#checkPortfolioButtonBorder {
+    border: solid 3px #818181;
+    border-style: outset; 
+    margin-left: 10px;
+    width: fit-content;
+}
+
+#checkPortfolioButton {
+    background: #c3c3c3;
+    border: solid 3px white;
+    border-style: outset;
+    font-family: "myFont";
+    font-size: large;
 }
 
 footer button {
@@ -207,7 +255,22 @@ footer button {
     font-size: large;
 }
 
-button:hover {
+button:hover, #checkPortfolioButtonBorder:hover, #checkPortfolioButton:hover, .menuButtonBorder:hover {
+    border-style: inset;
+}
+
+#searchBar {
+    float: left;
+    margin-top: -7px;
+    margin-left: 5px;
+    font-family: "myFont";
+    font-size: large;
+    border: solid 3px #818181;
+    border-style: outset;
+    height: 30px;
+}
+
+#searchBar:hover {
     border-style: inset;
 }
 

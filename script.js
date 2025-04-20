@@ -1,3 +1,6 @@
+const iframe = document.getElementById('iframe');
+const headerText = document.getElementById('headerText');
+
 // Function to update the date and time every second
 function updateDateTime() {
     document.getElementById('dateTime').innerHTML = new Date().toLocaleString();
@@ -38,3 +41,18 @@ document.addEventListener('mouseup', () => {
     isDragging = false;
     outsideBorder.classList.remove('grabbing');
 });
+
+function closeWindow() {
+    outsideBorder.style.transform = "scale(0)";
+    setTimeout(() => {
+        outsideBorder.style.display = "none";
+    }, 200); // Match transition duration
+}
+
+function openWindow() {
+    outsideBorder.style.display = "block"; // Make it visible again
+    // Allow display to apply before transforming
+    setTimeout(() => {
+      outsideBorder.style.transform = "scale(1)";
+    }, 10); // A tiny delay ensures the transform happens
+  }
