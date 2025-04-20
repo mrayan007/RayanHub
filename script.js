@@ -61,3 +61,11 @@ document.getElementById("changeHeader").addEventListener("click", function() {
     // Access and modify the headerText span in the parent
     window.parent.document.getElementById("headerText").textContent = "Portfolio";
 });
+
+// // Create an Audio object and specify the path directly
+// const audio = new Audio('click.mp3');
+
+// // Add an event listener to detect any click on the page
+// document.addEventListener('click', () => {
+//     audio.play();
+// });
