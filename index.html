@@ -5,48 +5,30 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="mainContainer">
+        <main>
             <div class="desktop">
-                <div class="school">
-                    <img src="books.png" alt="books" id="books" class="clickable">
-                    <h2>School</h2>
+                <div class="desktopApp">
+                    <img src="books.png" class="clickable">
+                    <label class="rainbowTextHover">School</label>
                 </div>
-                <div class="gamesDesktop">
-                    <a href="games.html" target="iframe" onclick="openWindow()"><img src="controller.png" alt="controller" id="controller" class="clickable"></a>
-                    <h2>Games</h2>
+                <div class="desktopApp">
+                    <img src="controller.png" class="clickable">
+                    <label class="rainbowTextHover">Games</label>
                 </div>
-                <div class="projectsDesktop">
-                    <img src="computer.png" alt="computer" id="computer" class="clickable">
-                    <h2>Projects</h2>
+                <div class="desktopApp">
+                    <img src="computer.png" class="clickable">
+                    <label class="rainbowTextHover">Projects</label>
                 </div>
-                <div class="aboutDesktop">
-                    <a href="about.html" target="iframe" onclick="openWindow()"><img src="paper.png" alt="paper" id="paper" class="clickable"></a>
-                    <h2>About</h2>
-                </div>
-            </div>
-            <div class="outsideBorder" id="outsideBorder">
-                <div class="insideBorder">
-                    <div class="header">
-                        <img src="globe.png" alt="globe" id="globe">
-                        <span id="headerText">Welcome!</span>
-                        <button type="button" id="closeButton" onclick="closeWindow()">✖</button>
-                    </div>
-                    <div class="secondOutsideBorder">
-                        <iframe src="about.html" id="iframe" name="iframe"></iframe>
-                    </div>
+                <div class="desktopApp">
+                    <img src="paper.png" class="clickable">
+                    <label class="rainbowTextHover">About</label>
                 </div>
             </div>
-            <div class="footerOutsideBorder">
-                <footer>
-                    <div class="menuButtonBorder">
-                        <button type="button">Menu</button>
-                    </div>
-                    <input type="text" id="searchBar" placeholder="Search...">
-                    <span id="footerText">Site still under construction!</span>
-                    <span id="footerWatermark"><span id="dateTime"></span></span>
-                </footer>
-            </div>
-        </div>
+        </main>
+        <footer>
+            <span id="footerText" class="rainbowText">Site is still under construction!</span>
+            <span id="dateTime" class="rainbowTextHover"></span>
+        </footer>
         <script src="script.js"></script>
     </body>
 </html>

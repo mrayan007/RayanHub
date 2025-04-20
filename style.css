@@ -1,206 +1,6 @@
 @font-face {
-    font-family: 'myFont';
+    font-family: 'font';
     src: url("W95FA.otf");
-}
-
-body, html {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    background-color: #008080;
-    font-family: "myFont";
-    letter-spacing: 1px;
-    overflow: hidden;
-    cursor: url("cursor.png"), auto;
-}
-
-.desktop {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0px;
-    margin-right: auto;
-    margin-bottom: auto;
-    /* row-gap: -2px; */
-}
-
-button, .clickable {
-    cursor: url("pointer.png"), pointer;
-}
-
-.mainContainer{
-    display: grid;
-    place-items: center;
-    height: 100vh;
-}
-  
-.outsideBorder {
-    width: 500px;
-    height: 400px;
-    border: solid 4px #818181; 
-    border-style: outset;
-    place-items: center;
-    display: grid;
-    /* box-shadow: 0px 0px 20px #000000; */
-    position: absolute;
-    /* Smooth transform animation */
-    transition: transform 0.2s ease;
-    transform: scale(1); /* Start at full size */
-    transform-origin: center; /* Optional: where the scaling shrinks from */
-}
-
-#outsideBorder.grabbing {
-    cursor: url("grab.png"), grabbing;
-}
-
-.insideBorder {
-    width: 496px;
-    height: 396px;
-    border: solid 3px white; 
-    border-style: outset;
-    place-items: center;
-    display: grid;
-    background-color: #c3c3c3;    ;
-}
-
-.header {
-    background-color: #010081;
-    width: 99%;
-    height: 35px;
-    margin-top: -7px;
-    color: white;
-    font-weight: bold;
-    font-size: large;
-    box-sizing: border-box;
-    padding-left: 5px;
-    display: flex;
-    align-items: center;   /* vertically center */
-    /* gap: 0px;   */
-}
-
-#globe {
-    width: 40px;
-    height: 40px;
-}
-
-#closeButton {
-    border: solid 3px white;
-    border-style: outset; 
-    font-family: "MyFont";
-    /* height: 25px;
-    width: 27px; */
-    font-size: large;
-    margin-left: auto;
-    margin-right: 3px;
-    scale: 0.8;
-}
-
-#closeButton:hover {
-    border-style: inset;
-}
-
-h1 {
-    color: transparent;
-    background-image: linear-gradient(to bottom, 
-      red, orange, yellow, green, blue, indigo, violet, red);
-    background-size: 100% 300%;
-    background-position: top;
-    background-repeat: no-repeat;
-    -webkit-background-clip: text;
-    background-clip: text;
-    animation: rainbowShift 2s linear infinite; 
-}
-
-.secondOutsideBorder {
-    width: 462px;
-    height: 320px;
-    border: solid 4px white ; 
-    border-style: inset;
-    place-items: center;
-    display: grid;
-}
-
-iframe {
-    width: 100%;
-    height: 100%;
-}
-
-.secondInsideBorder {
-    width: 457px;
-    height: 315px;
-    border: solid 3px #818181; 
-    border-style: inset;
-    background-color: #fdffff;
-}
-
-.secondInsideBorder img:hover, .desktop img:hover {
-    transform: scale(1.1);
-    transition: all 0.3s ease-in-out;
-}
-
-#books {
-    width: 100px;
-    height: 100px;
-}
-
-#controller {
-    width: 100px;
-    height: 100px;
-}
-
-#computer {
-    width: 100px;
-    height: 100px;
-}
-
-#paper {
-    width: 100px;
-    height: 100px;
-}
-
-.school {
-    place-items: center;
-    margin-right: 200px;
-    margin-top: 30px;
-}
-
-.projects {
-    place-items: center;
-    margin-right: 200px;
-}
-.projectsDesktop {
-    place-items: center;
-    /* margin-top: 200px; */
-    /* float: inline-start; */
-}
-
-.games {
-    place-items: center;
-    margin-left: 200px;
-    margin-top: -137px;
-}
-
-.gamesDesktop {
-    place-items: center;
-    /* float: left; */
-    /* margin-left: 50px; */
-    /* margin-top: -137px; */
-}
-
-.about {
-    place-items: center;
-    margin-left: 200px;
-    margin-top: -137px;
-}
-
-.aboutDesktop {
-    place-items: center;
-    /* float: left; */
-}
-
-h2 {
-    margin-top: -10px;
-    transition: all 0.3s ease-in-out;
 }
 
 @keyframes rainbowShift {
@@ -212,111 +12,86 @@ h2 {
     }
 }
 
-h2:hover, #footerWatermark:hover {
+.rainbowText {
     color: transparent;
-    background-image: linear-gradient(to bottom, 
-      red, orange, yellow, green, blue, indigo, violet, red);
+    background-image: linear-gradient(to bottom, red, orange, yellow, green, blue, indigo, violet, red);
     background-size: 100% 300%;
     background-position: top;
     background-repeat: no-repeat;
     -webkit-background-clip: text;
     background-clip: text;
-    animation: rainbowShift 2s linear infinite;
-  }
+    animation: rainbowShift 2s linear infinite; 
+}
 
-.footerOutsideBorder {
-    width: 100%;
-    height: 55px;
-    bottom: 0;
-    position: fixed;
-    border: solid 3px #818181;
-    border-style: outset;
+.rainbowTextHover:hover {
+    color: transparent;
+    background-image: linear-gradient(to bottom, red, orange, yellow, green, blue, indigo, violet, red);
+    background-size: 100% 300%;
+    background-position: top;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: rainbowShift 2s linear infinite; 
+}
+
+.clickable {
+    cursor: url("pointer.png"), pointer;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'font';
+    cursor: url("cursor.png"), auto;
+}
+
+main {
+    background-color: #008080;
+    height: calc(100vh - 58px); /* 58px = footer height + border-weight*2 */
+}
+
+.desktop {
+    display: flex;
+    flex-direction: column;
+    float: left;
+}
+
+.desktopApp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.desktopApp img {
+    width: 100px;
+    height: 100px;
+}
+
+.desktopApp img:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.desktopApp label {
+    font-size: larger;
 }
 
 footer {
     background-color: #c3c3c3;
-    width: 100%;
-    /* place-items: center;
-    display: grid; */
     height: 50px;
-    border: solid 3px white;
+    border: 4px solid white;
     border-style: outset;
-    align-content: center;
-    /* display: flex; */
-    /* justify-content: space-between; */
-    text-align: center;
-}
-
-.menuButtonBorder {
-    width: 70px;
-    height: 30px;
-    margin-top: -25px;
-    border: solid 3px #818181;
-    border-style: outset;
-    float: left;
-    margin-top: -12px;
-}
-
-#checkPortfolioButtonBorder {
-    border: solid 3px #818181;
-    border-style: outset; 
-    margin-left: 10px;
-    width: fit-content;
-}
-
-#checkPortfolioButton {
-    background: #c3c3c3;
-    border: solid 3px white;
-    border-style: outset;
-    font-family: "myFont";
-    font-size: large;
-}
-
-footer button {
-    background: none;
-    border: solid 3px white;
-    border-style: outset;
-    width: 70px;
-    height: 30px;
-    font-family: "myFont";
-    font-size: large;
-}
-
-button:hover, #checkPortfolioButtonBorder:hover, #checkPortfolioButton:hover, .menuButtonBorder:hover {
-    border-style: inset;
-}
-
-#searchBar {
-    float: left;
-    margin-top: -7px;
-    margin-left: 5px;
-    font-family: "myFont";
-    font-size: large;
-    border: solid 3px #818181;
-    border-style: outset;
-    height: 30px;
-}
-
-#searchBar:hover {
-    border-style: inset;
+    padding-right: 5px;
+    padding-left: 5px;
 }
 
 #footerText {
-    color: transparent;
-    background-image: linear-gradient(to bottom, 
-      red, orange, yellow, green, blue, indigo, violet, red);
-    background-size: 100% 300%;
-    background-position: top;
-    background-repeat: no-repeat;
-    -webkit-background-clip: text;
-    background-clip: text;
-    animation: rainbowShift 2s linear infinite;
-    /* font-size: large; */
+    line-height: 50px; /* Match the height of the footer to center self vertically */
     font-weight: bold;
 }
 
-#footerWatermark {
+#dateTime {
+    line-height: 50px; /* Match the height of the footer to center self vertically */
     float: right;
-    transition: all 0.3s ease-in-out;
-    margin-right: 5px;
 }
