@@ -1,3 +1,8 @@
+const desktopApps = document.querySelectorAll('.desktopApp');
+desktopApps.forEach(desktopApp => {
+    desktopApp.addEventListener('click', openWindow);
+});
+
 let dateTime;
 
 function updateDateTime() {
@@ -16,17 +21,48 @@ function closeWindow() {
     }, 200); // Match transition duration
 }
 
-const desktopApps = document.querySelectorAll('.desktopApp');
-desktopApps.forEach(desktopApp => {
-    desktopApp.addEventListener('click', openWindow);
-})
+function openWindow(event) {
+    const app = event.currentTarget; // The .desktopApp div that was clicked
+    const label = app.querySelector('label').textContent;
 
-function openWindow() {
-    if (windowContainer.style.display === "none") {
+    // Example logic to dynamically change the window content
+    const headerText = document.getElementById('headerText');
+    const iframe = document.querySelector('iframe');
+    const icon = document.querySelector('.windowHeader img');
+
+    headerText.textContent = label;
+
+    // Optional: customize based on label or index
+    if (label === "About") {
+        iframe.src = "about.html";
+        icon.src = "Art/paper.png";
+    } else if (label === "Games") {
+        iframe.src = "games.html";
+        icon.src = "Art/controller.png";
+    } else if (label === "School") {
+        iframe.src = "school.html";
+        icon.src = "Art/books.png";
+    } else if (label === "Projects") {
+        iframe.src = "projects.html";
+        icon.src = "Art/computer.png";
+    } else if (label === "Settings") {
+        iframe.src = "settings.html";
+        icon.src = "Art/settings.png";
+    }
+
+    if (label === "Settings"){
+        icon.style.scale = "0.6";
+    }
+    else {
+        icon.style.scale = "1";
+    }
+
+    // Open window if hidden
+    if (getComputedStyle(windowContainer).display === "none") {
         windowContainer.style.display = "block";
         setTimeout(() => {
             windowContainer.style.transform = "scale(1)";
-        }, 10); // Allow display to take effect before scaling
+        }, 10);
     }
 }
 

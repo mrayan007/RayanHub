@@ -35,7 +35,7 @@
 }
 
 .clickable {
-    cursor: url("pointer.png"), pointer;
+    cursor: url("Art/pointer.png"), pointer;
 }
 
 body {
@@ -43,7 +43,7 @@ body {
     height: 100vh;
     overflow: hidden;
     font-family: 'font';
-    cursor: url("cursor.png"), auto;
+    cursor: url("Art/cursor.png"), auto;
     letter-spacing: 1px;
 }
 
@@ -76,7 +76,7 @@ main {
 }
 
 .desktopApp label {
-    font-size: larger;
+    color: white;
 }
 
 footer {
@@ -90,7 +90,7 @@ footer {
 
 #footerText {
     line-height: 50px; /* Match the height of the footer to center self vertically */
-    font-weight: bold;
+    font-size: large;
 }
 
 #dateTime {
@@ -108,17 +108,18 @@ footer {
     outline-style: outset;
     /* Smooth transform animation */
     transition: transform 0.2s ease;
-    transform: scale(1); /* Start at full size */
     transform-origin: center; /* Optional: where the scaling shrinks from */
     position: absolute;
+    display: none;
+    transform: scale(0);
 }
 
 .grabbing {
-    cursor: url("grab.png"), grabbing;
+    cursor: url("Art/grab.png"), grabbing;
 }
 
 .windowHeader {
-    background-color: #010081;
+    background-image: linear-gradient(to right, #000080 , #1084d0);
     display: flex;
     height: 35px;
     margin: 5px;
@@ -132,7 +133,8 @@ footer {
 
 .windowHeader span {
     color: white;
-    font-weight: bold;
+    /* font-weight: bold; */
+    font-size: large;
 }
 
 .windowHeader button {
@@ -157,7 +159,7 @@ footer {
 }
 
 button {
-    cursor: url("pointer.png"), pointer;
+    cursor: url("Art/pointer.png"), pointer;
     border: 2px solid white;
     border-style: outset;
     font-family: 'Font';
