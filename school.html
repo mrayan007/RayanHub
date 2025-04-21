@@ -4,8 +4,49 @@
     </head> 
     <body>
         <h1 class="rainbowText">AVANS HOGESCHOOL</h1>
-        <p>Here you can find Avans Hogeschool's bachelor program Computer Science courses.</p>
-        <button class="normalButton">Year 1</button>
-        <script src="script.js"></script>
+        <div id="schoolMainPage">
+            <p>Here you can find Avans Hogeschool's bachelor program Computer Science courses.</p>
+            <p>Select the year you would like to explore.</p>
+            <button class="normalButton">Year 1</button>
+        </div>
+        <div id="schoolYear1Page" style="display: none;">
+            <h2 class="rainbowText">Year 1 Modules</h2>
+            <div class="schoolModules">
+                <button class="normalButton">Period 4: AI & System Integration</button>
+                <button class="normalButton">Period 4: AI & System Integration</button>
+                <button class="normalButton">Period 4: AI & System Integration</button>
+                <button class="normalButton">Period 4: AI & System Integration</button>
+                <button class="normalButton">Period 4: AI & System Integration</button>
+                <button class="normalButton">Period 4: AI & System Integration</button>
+                <button class="normalButton">Period 4: AI & System Integration</button>
+                <button class="normalButton">Period 4: AI & System Integration</button>
+                <button class="normalButton">Period 4: AI & System Integration</button>
+            </div>
+            <br>
+            <button class="normalButton" id="backButton" onclick="pageBack()">Back</button>
+        </div>
+        <script>
+            const schoolMainPage = document.getElementById("schoolMainPage");
+            const schoolYear1Page = document.getElementById("schoolYear1Page");
+
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+                button.addEventListener('click', changePage);
+            });
+
+            function changePage(event) {
+                const pressedButton = event.currentTarget.textContent;
+
+                if (pressedButton === 'Year 1') {
+                    schoolMainPage.style.display = "none";
+                    schoolYear1Page.style.display = "block";
+                }
+            }
+
+            function pageBack() {
+                schoolYear1Page.style.display = "none";
+                schoolMainPage.style.display = "block";
+            }
+        </script>
     </body>
 </html>
