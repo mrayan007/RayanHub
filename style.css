@@ -138,8 +138,6 @@ footer {
 .windowHeader button {
     margin-left: auto;
     margin-right: 5px;
-    border: 2px solid white;
-    border-style: outset;
     height: 25px;
     font-weight: bold;
 }
@@ -160,10 +158,21 @@ footer {
 
 button {
     cursor: url("pointer.png"), pointer;
+    border: 2px solid white;
+    border-style: outset;
+    font-family: 'Font';
 }
 
 button:hover {
     border-style: inset;
+    outline-style: inset;
+}
+
+.normalButton {
+    font-size: large;
+    outline: solid 3px #818181;
+    outline-style: outset;
+    margin-left: 3px;
 }
 
 #windowCenter {
