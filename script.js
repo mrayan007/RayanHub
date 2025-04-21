@@ -21,13 +21,14 @@ function closeWindow() {
     }, 200); // Match transition duration
 }
 
+const iframe = document.querySelector('iframe');
+
 function openWindow(event) {
     const app = event.currentTarget; // The .desktopApp div that was clicked
     const label = app.querySelector('label').textContent;
 
     // Example logic to dynamically change the window content
     const headerText = document.getElementById('headerText');
-    const iframe = document.querySelector('iframe');
     const icon = document.querySelector('.windowHeader img');
 
     headerText.textContent = label;

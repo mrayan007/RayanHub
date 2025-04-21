@@ -188,4 +188,5 @@ iframe {
     height: calc(100% - 40px); /* Full parent height - margin top - margin bottom*/
     margin: 20px;
     border: none;
+    overflow: hidden;
 }
