@@ -98,3 +98,7 @@ document.addEventListener('mouseup', () => {
     isDragging = false;
     windowContainer.classList.remove('grabbing');
 });
+
+function windowSize() {
+    windowContainer.classList.toggle('expanded');
+}

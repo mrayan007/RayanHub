@@ -106,11 +106,16 @@ footer {
     outline: solid 4px #818181;
     outline-style: outset;
     /* Smooth transform animation */
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, height 0.2s ease, width 0.2s ease;
     transform-origin: center; /* Optional: where the scaling shrinks from */
     position: absolute;
     display: none;
     transform: scale(0);
+}
+
+.windowContainer.expanded {
+    width: 99%;
+    height: 600px;
 }
 
 .grabbing {
@@ -136,11 +141,18 @@ footer {
     font-size: large;
 }
 
-.windowHeader button {
+#headerButtons {
+    display: flex;
+    flex-direction: row;
     margin-left: auto;
     margin-right: 5px;
+    gap: 5px;
+}
+
+#headerButtons button {
     height: 25px;
     font-weight: bold;
+    width: 25px;
 }
 
 .contentContainer {
@@ -180,6 +192,10 @@ button:hover {
     display: grid;
     place-items: center;
     width: 100%;
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 iframe {
@@ -206,6 +222,7 @@ iframe {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 3 columns, equal width */
     gap: 10px; /* optional spacing between items */
+    /* float: left ; */
 }
 
 .wallpaperOption {
