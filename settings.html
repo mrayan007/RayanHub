@@ -4,7 +4,51 @@
     </head> 
     <body>
         <p>Match the look of the website to your liking!</p>
-        <button class="normalButton" id="desktopWallpaperButton">Desktop wallpaper</button>
-        <script src="script.js"></script>
+        <div id="settingsPage">
+            <button class="normalButton" id="desktopWallpaperButton">Desktop wallpaper</button>
+        </div>
+        <div id="wallpaperPage" style="display: none;">
+            <h2 class="rainbowText">Desktop wallpaper</h2>
+            <div id="wallpaperOptions">
+                <div class="wallpaperOption">
+                    <div style="background-color: #008080;"></div>
+                    <label class="rainbowTextHover">#008080</label>
+                </div>
+                <div class="wallpaperOption">
+                    <div style="background-color: #E0115F;"></div>
+                    <label class="rainbowTextHover">#E0115F</label>
+                </div>
+            </div>
+        </div>
+        <script>
+            const settingsPage = document.getElementById("settingsPage");
+            const wallpaperPage = document.getElementById("wallpaperPage");
+
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+                button.addEventListener('click', changePage);
+            });
+            
+            const wallpaperOptions = document.querySelectorAll('.wallpaperOption');
+            wallpaperOptions.forEach(wallpaperOption => {
+                wallpaperOption.addEventListener('click', changeWallpaper);
+            });
+
+            function changePage(event) {
+                const pressedButton = event.currentTarget.textContent;
+
+                if (pressedButton === 'Desktop wallpaper') {
+                    settingsPage.style.display = "none";
+                    wallpaperPage.style.display = "block";
+                }
+            }
+            
+            function changeWallpaper(event) {
+                const chosenWallpaper = event.currentTarget.textContent;
+
+                window.parent.document.querySelector('main').style.backgroundColor = chosenWallpaper;
+                // document.body.style.backgroundColor = chosenWallpaper;
+            }
+        </script>
     </body>
 </html>

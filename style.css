@@ -201,3 +201,27 @@ iframe {
     gap: 20px;
     margin-right: 4px;
 }
+
+#wallpaperOptions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 3 columns, equal width */
+    gap: 10px; /* optional spacing between items */
+}
+
+.wallpaperOption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.wallpaperOption div{
+    width: 20px;
+    height: 20px;
+    border: 3px solid white;
+    border-style: outset;
+}
+
+.wallpaperOption div:hover {
+    border-style: inset;
+}
