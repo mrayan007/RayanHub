@@ -215,10 +215,10 @@ iframe {
 }
 
 #wallpaperOptions {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 3 columns, equal width */
-    gap: 10px; /* optional spacing between items */
-    /* float: left ; */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
 }
 
 .wallpaperOption {
