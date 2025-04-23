@@ -51,10 +51,10 @@ function openWindow(event) {
         icon.src = "Art/settings.png";
     } else if (label === "To-do list") {
         iframe.src = "todo.html";
-        icon.src = "Art/settings.png";
+        icon.src = "Art/todo.png";
     }
 
-    if (label === "Settings"){
+    if (label === "Settings" || label === "To-do list"){
         icon.style.scale = "0.6";
     }
     else {

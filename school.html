@@ -11,23 +11,34 @@
         </div>
         <div id="schoolYear1Page" style="display: none;">
             <h2 class="rainbowText">Year 1 Modules</h2>
-            <div class="schoolModules">
-                <button class="normalButton">Period 4: AI & System Integration</button>
-                <button class="normalButton">Period 4: AI & System Integration</button>
-                <button class="normalButton">Period 4: AI & System Integration</button>
-                <button class="normalButton">Period 4: AI & System Integration</button>
-                <button class="normalButton">Period 4: AI & System Integration</button>
-                <button class="normalButton">Period 4: AI & System Integration</button>
-                <button class="normalButton">Period 4: AI & System Integration</button>
-                <button class="normalButton">Period 4: AI & System Integration</button>
+            <div class="columnButtons">
                 <button class="normalButton">Period 4: AI & System Integration</button>
             </div>
             <br>
-            <button class="normalButton" id="backButton" onclick="pageBack()">Back</button>
         </div>
+        <div id="period4page" style="display: none;">
+            <h2 class="rainbowText">AI & System Integration</h2>
+            <div class="columnButtons">
+                <button class="normalButton">Module kick-off</button>
+                <button class="normalButton">Project case introduction</button>
+            </div>
+        </div>
+        <div id="period4kickoff" style="display: none;">
+            <h2 class="rainbowText">Module kick-off</h2>
+            <embed src="PDF/1.4KickOff.pdf" type="application/pdf" width="100%" height="600px">
+        </div>
+        <div id="period4caseintro" style="display: none;">
+            <h2 class="rainbowText">Project case introduction</h2>
+            <embed src="PDF/Opdracht_Geautomatiseerde Afvalclassificatie .pdf" type="application/pdf" width="100%" height="600px">
+        </div>
+        <button class="normalButton" id="backButton" onclick="pageBack()" style="display: none;">Back</button>
         <script>
             const schoolMainPage = document.getElementById("schoolMainPage");
             const schoolYear1Page = document.getElementById("schoolYear1Page");
+            const period4page = document.getElementById("period4page");
+            const period4kickoff = document.getElementById("period4kickoff");
+            const period4caseintro = document.getElementById("period4caseintro");
+            const backButton = document.getElementById("backButton");
 
             const buttons = document.querySelectorAll('button');
             buttons.forEach(button => {
@@ -40,12 +51,49 @@
                 if (pressedButton === 'Year 1') {
                     schoolMainPage.style.display = "none";
                     schoolYear1Page.style.display = "block";
+                    backButton.style.display = "block";
+                }
+                
+                else if (pressedButton === 'Period 4: AI & System Integration') {
+                    period4page.style.display = "block";
+                    schoolYear1Page.style.display = "none";
+                }
+                
+                else if (pressedButton === 'Module kick-off') {
+                    period4kickoff.style.display = "block";
+                    period4page.style.display = "none";
+                }
+                
+                else if (pressedButton === 'Project case introduction') {
+                    period4caseintro.style.display = "block";
+                    period4page.style.display = "none";
                 }
             }
 
             function pageBack() {
-                schoolYear1Page.style.display = "none";
-                schoolMainPage.style.display = "block";
+                if (period4caseintro.style.display === "block") {
+                    period4caseintro.style.display = "none";
+                    period4page.style.display = "block";
+                }
+                
+                else if (period4kickoff.style.display === "block") {
+                    period4kickoff.style.display = "none";
+                    period4page.style.display = "block";
+                }
+                
+                else if (period4page.style.display === "block") {
+                    period4page.style.display = "none";
+                    schoolYear1Page.style.display = "block";
+                }
+
+                else if (schoolYear1Page.style.display === "block") {
+                    schoolYear1Page.style.display = "none";
+                    schoolMainPage.style.display = "block";
+                }
+
+                if (schoolMainPage.style.display === "block") {
+                    backButton.style.display = "none";
+                }
             }
         </script>
     </body>

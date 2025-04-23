@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1 class="rainbowText">PROJECTS</h1>
+        <div id="projectsPage">
+            <p>This is a repository for projects I make/am involved in.</p>
+            <div class="columnButtons">
+                <button class="normalButton">Smart Litter Recognition</button>
+            </div>
+        </div>
+        <div id="avans1.4lu2" style="display: none;">
+            <h2 class="rainbowText">Smart Litter Recognition</h2>
+            <P>This is a project I have to make for school.</P>
+            <div class="columnButtons">
+                <button class="normalButton">Case introduction</button>
+            </div>
+        </div>
+        <div id="avans1.4lu2caseintro" style="display: none;">
+            <h2 class="rainbowText">Case introduction</h2>
+            <embed src="PDF/Opdracht_Geautomatiseerde Afvalclassificatie .pdf" type="application/pdf" width="100%" height="600px">
+        </div>
+        <button class="normalButton" id="backButton" onclick="pageBack()" style="display: none;">Back</button>
+        <script>
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+                button.addEventListener('click', changePage);
+            });
+
+            const projectsPage = document.getElementById("projectsPage");
+            const avans1_4lu2 = document.getElementById("avans1.4lu2");
+            const avans1_4lu2caseintro = document.getElementById("avans1.4lu2caseintro");
+            const backButton = document.getElementById("backButton");
+
+            function changePage(event) {
+                const pressedButton = event.currentTarget.textContent;
+
+                if (pressedButton === 'Smart Litter Recognition') {
+                    projectsPage.style.display = "none";
+                    avans1_4lu2.style.display = "block";
+                    backButton.style.display = "block";
+                }
+                
+                else if (pressedButton === 'Case introduction') {
+                    avans1_4lu2.style.display = "none";
+                    avans1_4lu2caseintro.style.display = "block";
+                }
+            }
+
+            function pageBack() {
+                if (avans1_4lu2caseintro.style.display === "block") {
+                    avans1_4lu2caseintro.style.display = "none";
+                    avans1_4lu2.style.display = "block";
+                } 
+                
+                else if (avans1_4lu2.style.display === "block") {
+                    avans1_4lu2.style.display = "none";
+                    projectsPage.style.display = "block";
+                }
+
+                if (projectsPage.style.display === "block") {
+                    backButton.style.display = "none";
+                }
+            }
+        </script>
+    </body>
+</html>

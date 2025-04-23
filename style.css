@@ -67,7 +67,6 @@ main {
 }
 
 .desktopApp img {
-    width: 100px;
     height: 100px;
 }
 
@@ -208,7 +207,7 @@ iframe {
     right: 3px;
 }
 
-.schoolModules {
+.columnButtons {
     display: flex;
     flex-direction: column;
     gap: 20px;
