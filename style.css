@@ -40,7 +40,7 @@
 
 body {
     margin: 0;
-    height: 100vh;
+    height: 100dvh;
     font-family: 'font';
     cursor: url("Art/cursor.png"), auto;
     letter-spacing: 1px;
@@ -48,14 +48,16 @@ body {
 
 main {
     background-color: #008080;
-    height: calc(100vh - 58px); /* 58px = footer height + border-weight*2 */
+    height: calc(100dvh - 58px); /* 58px = footer height + border-weight*2 */
     display: flex;
 }
 
 .desktop {
     display: flex;
     flex-direction: column;
-    float: left;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    max-height: 100%;
 }
 
 .desktopApp {
@@ -85,16 +87,18 @@ footer {
     border-style: outset;
     padding-right: 5px;
     padding-left: 5px;
+    display: flex;
+    justify-content: space-between;
+    line-height: 50px;
 }
 
 #footerText {
-    line-height: 50px; /* Match the height of the footer to center self vertically */
     font-size: large;
 }
 
-#dateTime {
-    line-height: 50px; /* Match the height of the footer to center self vertically */
-    float: right;
+footer button {
+    max-height: fit-content;
+    margin-top: 12px;
 }
 
 .windowContainer {
@@ -111,9 +115,12 @@ footer {
     position: absolute;
     display: none;
     transform: scale(0);
+    left: 35%;
+    top: 17%;
 }
 
 .windowContainer.expanded {
+    transition: left 0s ease, top 0s ease;
     width: 99%;
     height: 600px;
 }
@@ -186,16 +193,6 @@ button:hover {
     outline: solid 3px #818181;
     outline-style: outset;
     margin-left: 3px;
-}
-
-#windowCenter {
-    display: grid;
-    place-items: center;
-    width: 100%;
-    position: fixed;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 iframe {

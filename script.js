@@ -49,6 +49,9 @@ function openWindow(event) {
     } else if (label === "Settings") {
         iframe.src = "settings.html";
         icon.src = "Art/settings.png";
+    } else if (label === "To-do list") {
+        iframe.src = "todo.html";
+        icon.src = "Art/settings.png";
     }
 
     if (label === "Settings"){
@@ -101,4 +104,19 @@ document.addEventListener('mouseup', () => {
 
 function windowSize() {
     windowContainer.classList.toggle('expanded');
+    
+    centerWindow();    
+}
+
+function centerWindow() {
+    const windowWidth = windowContainer.offsetWidth;
+    const windowHeight = windowContainer.offsetHeight;
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+
+    const left = (screenWidth - windowWidth) / 2;
+    const top = (screenHeight - windowHeight) / 2 - 30;
+
+    windowContainer.style.left = left + 'px';
+    windowContainer.style.top = top + 'px';
 }

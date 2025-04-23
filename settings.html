@@ -12,13 +12,18 @@
             <div id="wallpaperOptions">
                 <div class="wallpaperOption">
                     <div style="background-color: #008080;"></div>
-                    <label class="rainbowTextHover">#008080</label>
+                    <label class="rainbowTextHover">TURQUOISE</label>
                 </div>
                 <div class="wallpaperOption">
                     <div style="background-color: #E0115F;"></div>
-                    <label class="rainbowTextHover">#E0115F</label>
+                    <label class="rainbowTextHover">PINK</label>
+                </div>
+                <div class="wallpaperOption">
+                    <div style="background-image: url('Art/psp.webp');"></div>
+                    <label class="rainbowTextHover">PSP</label>
                 </div>
             </div>
+            <button class="normalButton" id="backButton" onclick="pageBack()">Back</button>
         </div>
         <script>
             const settingsPage = document.getElementById("settingsPage");
@@ -44,10 +49,15 @@
             }
             
             function changeWallpaper(event) {
-                const chosenWallpaper = event.currentTarget.textContent;
+                const chosenWallpaper = event.currentTarget.querySelector('div');
 
-                window.parent.document.querySelector('main').style.backgroundColor = chosenWallpaper;
-                // document.body.style.backgroundColor = chosenWallpaper;
+                window.parent.document.querySelector('main').style.backgroundColor = chosenWallpaper.style.backgroundColor;
+                window.parent.document.querySelector('main').style.backgroundImage = chosenWallpaper.style.backgroundImage;
+            }
+
+            function pageBack() {
+                wallpaperPage.style.display = "none";
+                settingsPage.style.display = "block";
             }
         </script>
     </body>

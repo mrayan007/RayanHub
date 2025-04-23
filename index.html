@@ -27,25 +27,28 @@
                     <img src="Art/settings.png" class="clickable" style="scale: 0.6;">
                     <label class="rainbowTextHover">Settings</label>
                 </div>
+                <div class="desktopApp">
+                    <img src="Art/settings.png" class="clickable" style="scale: 0.6;">
+                    <label class="rainbowTextHover">To-do list</label>
+                </div>
             </div>
-            <div id="windowCenter">
-                <div class="windowContainer">
-                    <div class="windowHeader">
-                        <img src="">
-                        <span id="headerText"></span>
-                        <div id="headerButtons">
-                            <button onclick="windowSize()">🗖</button>
-                            <button onclick="closeWindow()">✖</button>
-                        </div>
+            <div class="windowContainer">
+                <div class="windowHeader">
+                    <img src="">
+                    <span id="headerText"></span>
+                    <div id="headerButtons">
+                        <button onclick="windowSize()">🗖</button>
+                        <button onclick="closeWindow()">✖</button>
                     </div>
-                    <div class="contentContainer">
-                        <iframe src="" name="iframe"></iframe>
-                    </div>
+                </div>
+                <div class="contentContainer">
+                    <iframe src="" name="iframe"></iframe>
                 </div>
             </div>
         </main>
         <footer>
             <span id="footerText" class="rainbowText">Site is still under construction!</span>
+            <button class="normalButton" onclick="centerWindow()">Center window</button>
             <span id="dateTime" class="rainbowTextHover"></span>
         </footer>
         <script src="script.js"></script>
