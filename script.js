@@ -12,7 +12,7 @@ function updateDateTime() {
 
 setInterval(updateDateTime, 1000);
 
-const windowContainer = document.querySelector('.windowContainer');
+const windowContainer = document.getElementById('windowContainer');
 
 function closeWindow() {
     windowContainer.style.transform = "scale(0)";
@@ -29,7 +29,7 @@ function openWindow(event) {
 
     // Example logic to dynamically change the window content
     const headerText = document.getElementById('headerText');
-    const icon = document.querySelector('.windowHeader img');
+    const icon = document.querySelector('#windowHeader img');
 
     headerText.textContent = label;
 
@@ -103,9 +103,7 @@ document.addEventListener('mouseup', () => {
 });
 
 function windowSize() {
-    windowContainer.classList.toggle('expanded');
-    
-    centerWindow();    
+    windowContainer.classList.toggle('expanded'); 
 }
 
 function centerWindow() {
@@ -115,7 +113,7 @@ function centerWindow() {
     const screenHeight = window.innerHeight;
 
     const left = (screenWidth - windowWidth) / 2;
-    const top = (screenHeight - windowHeight) / 2 - 30;
+    const top = (screenHeight - windowHeight) / 2;
 
     windowContainer.style.left = left + 'px';
     windowContainer.style.top = top + 'px';

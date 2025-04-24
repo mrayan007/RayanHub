@@ -6,7 +6,7 @@
     </head>
     <body style="overflow: hidden;">
         <main>
-            <div class="desktop">
+            <div id="desktopApps">
                 <div class="desktopApp">
                     <img src="Art/books.png" class="clickable">
                     <label class="rainbowTextHover">School</label>
@@ -32,20 +32,20 @@
                     <label class="rainbowTextHover">To-do list</label>
                 </div>
             </div>
-            <div class="windowContainer">
-                <div class="windowHeader">
-                    <img src="">
-                    <span id="headerText"></span>
-                    <div id="headerButtons">
-                        <button onclick="windowSize()">🗖</button>
-                        <button onclick="closeWindow()">✖</button>
-                    </div>
-                </div>
-                <div class="contentContainer">
-                    <iframe src="" name="iframe"></iframe>
+        </main>
+        <div id="windowContainer">
+            <div id="windowHeader">
+                <img src="">
+                <span id="headerText"></span>
+                <div id="headerButtons">
+                    <button onclick="windowSize()">🗖</button>
+                    <button onclick="closeWindow()">✖</button>
                 </div>
             </div>
-        </main>
+            <div id="contentContainer">
+                <iframe src="" name="iframe"></iframe>
+            </div>
+        </div>
         <footer>
             <span id="footerText" class="rainbowText">Site is still under construction!</span>
             <button class="normalButton" onclick="centerWindow()">Center window</button>
