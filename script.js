@@ -103,18 +103,27 @@ document.addEventListener('mouseup', () => {
 });
 
 function windowSize() {
+    if (!windowContainer.classList.contains('expanded')) {
+        windowContainer.style.left = "4px";
+        windowContainer.style.top = "4px";
+    }
+    else {
+        windowContainer.style.left = "calc((100% - 500px + 6px + 8px) / 2)";
+        windowContainer.style.top = "calc((100% - 400px + 6px + 8px) / 2)";
+    }
+
     windowContainer.classList.toggle('expanded'); 
 }
 
-function centerWindow() {
-    const windowWidth = windowContainer.offsetWidth;
-    const windowHeight = windowContainer.offsetHeight;
-    const screenWidth = window.innerWidth;
-    const screenHeight = window.innerHeight;
+// function centerWindow() {
+//     const windowWidth = windowContainer.offsetWidth;
+//     const windowHeight = windowContainer.offsetHeight;
+//     const screenWidth = window.innerWidth;
+//     const screenHeight = window.innerHeight;
 
-    const left = (screenWidth - windowWidth) / 2;
-    const top = (screenHeight - windowHeight) / 2;
+//     const left = (screenWidth - windowWidth) / 2;
+//     const top = (screenHeight - windowHeight) / 2;
 
-    windowContainer.style.left = left + 'px';
-    windowContainer.style.top = top + 'px';
-}
+//     windowContainer.style.left = left + 'px';
+//     windowContainer.style.top = top + 'px';
+// }

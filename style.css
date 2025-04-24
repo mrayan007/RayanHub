@@ -110,16 +110,19 @@ footer button {
     outline: solid 4px #818181;
     outline-style: outset;
     position: fixed;
-    left: calc((100% - 500px) / 2);
-    top: calc((100% - 400px) / 2);
+    left: calc((100% - 500px + 6px + 8px) / 2);
+    top: calc((100% - 400px + 6px + 8px) / 2);
     transform: scale(0);
-    transition: transform 0.2s ease, height 0.2s ease, width 0.2s ease;
+    transition: transform 0.2s ease;
     transform-origin: center;
     display: none;
 }
 
 #windowContainer.expanded {
-    width: 100%;
+    left: 4px;
+    top: 4px;
+    width: calc(100% - 13px);
+    height: calc(100% - 13px);
 }
 
 .grabbing {
