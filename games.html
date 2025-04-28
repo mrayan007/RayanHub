@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="gamesPage">
+            <button class="normalButton" onclick="changePage()">Snake Game</button>
+        </div>
+        <script>
+            const iframe = window.parent.document.querySelector('iframe');
+
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+                button.addEventListener('click', changePage);
+            });
+
+            function changePage(event) {
+                const pressedButton = event.currentTarget.textContent;
+
+                if (pressedButton === 'Snake Game') {
+                    iframe.src = "Games/Snake/index.html";
+                }
+            }
+        </script>
+    </body>
+</html>
